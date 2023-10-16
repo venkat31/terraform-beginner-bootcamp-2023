@@ -20,3 +20,21 @@ variable "bucket_name" {
     error_message = "Bucket name must start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, periods, and hyphens"
   }
 }
+
+variable "index_html_path" {
+    description = " The file for index.html"
+    type = string
+    validation {
+    condition     = fileexists(var.index_html_path)
+    error_message = "filename doesn't exist"
+  }
+}
+
+variable "error_html_path" {
+    description = " The file for index.html"
+    type = string
+    validation {
+    condition     = fileexists(var.error_html_path)
+    error_message = "filename doesn't exist"
+  }
+}
