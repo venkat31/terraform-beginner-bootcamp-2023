@@ -1,7 +1,2 @@
-resource "aws_s3_bucket" "website_bukcet" {
-  bucket = var.bucket_name
+data "aws_caller_identity" "current" {}
 
-  tags = {
-    UserUuid    = var.user_uuid
-  }
-}
