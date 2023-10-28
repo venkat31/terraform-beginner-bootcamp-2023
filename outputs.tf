@@ -1,7 +1,13 @@
-output "bucket_name"{
-    value = module.terrahouse-aws.random_bucket_name_result
+output "bucket_name" {
+  description = "Bucket name for our static website hosting"
+  value = module.terrahouse-aws.bucket_name
 }
 
-output "website_endpoint"{
-    value = module.terrahouse-aws.s3_staticwebsite_endpoint
+output "s3_website_endpoint" {
+  description = "S3 Static Website hosting endpoint"
+  value = module.terrahouse-aws.website_endpoint
+}
+
+output "cdn-domainname"{
+    value = module.terrahouse-aws.cloudfront_distribution_name
 }
